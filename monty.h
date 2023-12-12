@@ -20,6 +20,20 @@ typedef struct stack_s
 } stack_t;
 
 /**
+ * struct instruction_s - opcode and its function
+ * @opcode: the opcode
+ * @f: function to handle the opcode
+ *
+ * Description: opcode and its function
+ * for stack, queues, LIFO, FIFO Holberton project
+ */
+typedef struct instruction_s
+{
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
+} instruction_t;
+
+/**
  * struct fvar_s - variables -args, file, line content
  * @ag: value
  * @file: pointer to monty file
@@ -34,20 +48,6 @@ typedef struct fvar_s
 	char *con;
 	int fque;
 }  fvar_t;
-
-/**
- * struct instruction_s - opcode and its function
- * @opcode: the opcode
- * @f: function to handle the opcode
- *
- * Description: opcode and its function
- * for stack, queues, LIFO, FIFO Holberton project
- */
-typedef struct instruction_s
-{
-	char *opcode;
-	void (*f)(stack_t **stack, unsigned int line_number);
-} instruction_t;
 
 int fexe(char *content, stack_t **head, size_t counter, FILE *file);
 
