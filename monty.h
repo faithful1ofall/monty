@@ -49,7 +49,8 @@ typedef struct fvar_s
 	int fque;
 }  fvar_t;
 
-int fexe(char *content, stack_t **head, size_t counter, FILE *file);
-
+int fexe(char *, stack_t, size_t, FILE *);
+void f_push(stack_t, unsigned int);
+void f_pall(stack_t, unsigned int);
 
 #endif /* MONTY_H */
