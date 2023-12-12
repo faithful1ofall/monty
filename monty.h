@@ -1,6 +1,8 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+#include <stdlib.h>
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -18,6 +20,22 @@ typedef struct stack_s
 } stack_t;
 
 /**
+ * struct fvar_s - variables -args, file, line content
+ * @ag: value
+ * @file: pointer to monty file
+ * @con: line content
+ * @fque: flag change stack <-> queue
+ * Description: carries values through the program
+ */
+typedef struct fvar_s
+{
+	char *ag;
+	FILE *file;
+	char *con;
+	int fque;
+}  fvar_t;
+
+/**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
  * @f: function to handle the opcode
@@ -31,6 +49,7 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+int fexe(char *content, stack_t **head, size_t counter, FILE *file);
 
 
 #endif /* MONTY_H */
