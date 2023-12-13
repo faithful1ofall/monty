@@ -51,7 +51,7 @@ typedef struct fvar_s
 }  fvar_t;
 
 int fexe(char *, stack_t, size_t, FILE *);
-void f_push(stack_t, unsigned int);
-void f_pall(stack_t, unsigned int);
+void s_push(stack_t, unsigned int);
+void s_pall(stack_t, unsigned int);
 
 #endif /* MONTY_H */
