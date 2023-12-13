@@ -3,6 +3,11 @@
 
 #include <stdlib.h>
 #include <fcntl.h>
+#include <stdio.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <string.h>
+#include <ctype.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -51,6 +56,7 @@ typedef struct fvar_s
 }  fvar_t;
 
 int fexe(char *, stack_t, size_t, FILE *);
+void free_fstack(stack_t *head);
 void s_push(stack_t, unsigned int);
 void s_pall(stack_t, unsigned int);
 
