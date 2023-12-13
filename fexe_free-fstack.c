@@ -35,3 +35,20 @@ int fexe(char *content, stack_t **stack, unsigned int counter, FILE *file)
 		exit(EXIT_FAILURE); }
 	return (1);
 }
+
+/**
+* free_fstack - frees a doubly linked list
+* @head: head of the stack
+*/
+void free_fstack(stack_t *head)
+{
+	stack_t *faux;
+
+	faux = head;
+	while (head)
+	{
+		faux = head->next;
+		free(head);
+		head = faux;
+	}
+}
