@@ -39,7 +39,7 @@ int main(int ac, char *av[])
 		}
 		free(content);
 	}
-	free_stack(stack);
+	free_fstack(stack);
 	fclose(file);
 return (0);
 }
