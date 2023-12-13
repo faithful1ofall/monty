@@ -54,6 +54,7 @@ typedef struct fvar_s
 	char *con;
 	int fque;
 }  fvar_t;
+extern fvar_t fuse;
 
 int fexe(char *, stack_t, size_t, FILE *);
 void free_fstack(stack_t *head);
