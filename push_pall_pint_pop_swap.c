@@ -7,30 +7,32 @@
 */
 void s_push(stack_t **fhead, unsigned int counter)
 {
-	int n, j = 0, flag = 0;
+	int n = atoi(fuse.ag), j = 0, flag = 0;
 
 	if (fuse.ag)
 	{
 		if (fuse.ag[0] == '-')
 			j++;
 		for (; fuse.ag[j] != '\0'; j++)
-		{
 			if (fuse.ag[j] > 57 || fuse.ag[j] < 48)
-				flag = 1; }
+				flag = 1;
 		if (flag == 1)
-		{ fprintf(stderr, "L%d: usage: push integer\n", counter);
+		{ 
+			fprintf(stderr, "L%d: usage: push integer\n", counter);
 			fclose(fuse.file);
 			free(fuse.fcontent);
 			free_fstack(*fhead);
-			exit(EXIT_FAILURE); }}
+			exit(EXIT_FAILURE);
+		}
+	}
 	else
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", counter);
 		fclose(fuse.file);
 		free(fuse.fcontent);
 		free_fstack(*fhead);
-		exit(EXIT_FAILURE); }
-	n = atoi(fuse.ag);
+		exit(EXIT_FAILURE);
+	}
 	if (fuse.fque == 0)
 		faddnode(fhead, n);
 	else
