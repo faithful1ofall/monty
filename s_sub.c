@@ -8,6 +8,7 @@
  */
 void s_sub(stack_t **fhead, unsigned int counter)
 {
+	fvar_t fuse = {NULL, NULL, NULL, 0};
 	stack_t *faux;
 	int sus, nodes;
 
