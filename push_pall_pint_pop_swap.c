@@ -24,7 +24,8 @@ void s_push(stack_t **fhead, unsigned int counter)
 			free_fstack(*fhead);
 			exit(EXIT_FAILURE); }}
 	else
-	{ fprintf(stderr, "L%d: usage: push integer\n", counter);
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", counter);
 		fclose(fuse.file);
 		free(fuse.fcontent);
 		free_fstack(*fhead);
