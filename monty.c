@@ -1,5 +1,6 @@
 #include "monty.h"
 
+fvar_t fuse = {NULL, NULL, NULL, 0};
 /**
 * main - monty code interpreter
 * @ac: number of arguments
