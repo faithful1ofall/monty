@@ -31,7 +31,6 @@ void faddnode(stack_t **fhead, int n)
 */
 void s_stack(stack_t **fhead, unsigned int counter)
 {
-	fvar_t fuse = {NULL, NULL, NULL, 0};
 	(void)fhead;
 	(void)counter;
 	fuse.fque = 0;
@@ -45,7 +44,6 @@ void s_stack(stack_t **fhead, unsigned int counter)
 */
 void s_queue(stack_t **fhead, unsigned int counter)
 {
-	fvar_t fuse = {NULL, NULL, NULL, 0};
 	(void)fhead;
 	(void)counter;
 	fuse.fque = 1;
