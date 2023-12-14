@@ -8,7 +8,6 @@
 */
 void s_push(stack_t **fhead, unsigned int counter)
 {
-	fvar_t fuse = {NULL, NULL, NULL, 0};
 	int n = atoi(fuse.ag), j = 0, flag = 0;
 
 	if (fuse.ag)
@@ -49,7 +48,6 @@ void s_push(stack_t **fhead, unsigned int counter)
 */
 void s_pall(stack_t **fhead, unsigned int counter)
 {
-	fvar_t fuse = {NULL, NULL, NULL, 0};
 	stack_t *h;
 	(void)counter;
 
@@ -71,8 +69,6 @@ void s_pall(stack_t **fhead, unsigned int counter)
 */
 void s_pint(stack_t **fhead, unsigned int counter)
 {
-	fvar_t fuse = {NULL, NULL, NULL, 0};
-
 	if (*fhead == NULL)
 	{
 		fprintf(stderr, "L%u: can't pint, stack empty\n", counter);
@@ -92,7 +88,6 @@ void s_pint(stack_t **fhead, unsigned int counter)
 */
 void s_pop(stack_t **fhead, unsigned int counter)
 {
-	fvar_t fuse = {NULL, NULL, NULL, 0};
 	stack_t *h;
 
 	if (*fhead == NULL)
@@ -116,7 +111,6 @@ void s_pop(stack_t **fhead, unsigned int counter)
 */
 void s_swap(stack_t **fhead, unsigned int counter)
 {
-	fvar_t fuse = {NULL, NULL, NULL, 0};
 	stack_t *h;
 	int len = 0, faux;
 
