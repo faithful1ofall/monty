@@ -9,6 +9,7 @@
 */
 void s_mod(stack_t **fhead, unsigned int counter)
 {
+	fvar_t fuse = {NULL, NULL, NULL, 0};
 	stack_t *h;
 	int len = 0, faux;
 
