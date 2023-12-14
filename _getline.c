@@ -20,6 +20,7 @@ if (*lineptr == NULL || *n == 0)
 	*lineptr = (char *)malloc(*n);
 	if (*lineptr == NULL)
 		return (-1);
+}
 	while ((ch = fgetc(stream)) != EOF)
 	{
 		if (pos >= *n - 1)
@@ -38,5 +39,4 @@ if (*lineptr == NULL || *n == 0)
 		return (-1);
 	(*lineptr)[pos] = '\0';
 	return (pos);
-}
 }
