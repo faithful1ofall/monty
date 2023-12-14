@@ -45,7 +45,7 @@ typedef struct instruction_s
  * struct fvar_s - variables -args, file, line fcontent
  * @ag: value
  * @file: pointer to monty file
- * @con: line fcontent
+ * @fcontent: line fcontent
  * @fque: flag change stack <-> queue
  * Description: carries values through the program
  */
