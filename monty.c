@@ -14,8 +14,8 @@ int main(int ac, char *av[])
 	size_t size = 0;
 	ssize_t read_line = 1;
 	stack_t *stack = NULL;
-	unsigned int counter = 0;
 
+	unsigned int counter = 0;
 	if (ac != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
