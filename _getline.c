@@ -1,5 +1,7 @@
 #include "monty.h"
 
+fvar_t fuse = {NULL, NULL, NULL, 0};
+
 /**
 * _getline - custom getline function
 * @lineptr: content and lines
