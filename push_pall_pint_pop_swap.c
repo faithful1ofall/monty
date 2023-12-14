@@ -8,7 +8,7 @@
 */
 void s_push(stack_t **fhead, unsigned int counter)
 {
-	int n = atoi(fuse.ag), j = 0, flag = 0;
+	int n, j = 0, flag = 0;
 
 	if (fuse.ag)
 	{
@@ -34,6 +34,8 @@ void s_push(stack_t **fhead, unsigned int counter)
 		free_fstack(*fhead);
 		exit(EXIT_FAILURE);
 	}
+	n = atoi(fuse.ag);
+
 	if (fuse.fque == 0)
 		faddnode(fhead, n);
 	else
