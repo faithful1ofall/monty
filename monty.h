@@ -1,9 +1,9 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+#include <stdio.h>
 #include <stdlib.h>
 #include <fcntl.h>
-#include <stdio.h>
 #include <string.h>
 #include <sys/types.h>
 #include <unistd.h>
@@ -86,8 +86,5 @@ void faddnode(stack_t **, int);
 void s_stack(stack_t **, unsigned int);
 void s_queue(stack_t **, unsigned int);
 void faddqueue(stack_t **, int);
-char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
-ssize_t getstdin(char **lineptr, int file);
-char  *clean_line(char *content);
 
 #endif /* MONTY_H */
