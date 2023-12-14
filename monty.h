@@ -61,7 +61,7 @@ extern fvar_t fuse;
 
 int fexe(char *, stack_t **, unsigned int, FILE *);
 void free_fstack(stack_t *);
-char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
+/*char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);*/
 ssize_t getstdin(char **lineptr, int file);
 char  *clean_line(char *content);
 ssize_t _getline(char **lineptr, size_t *n, FILE *stream);
