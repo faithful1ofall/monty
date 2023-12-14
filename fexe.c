@@ -10,6 +10,7 @@
 */
 int fexe(char *fcontent, stack_t **stack, unsigned int counter, FILE *file)
 {
+	fvar_t fuse = {NULL, NULL, NULL, 0};
 	instruction_t opst[] = {
 				{"push", s_push}, {"pall", s_pall}, {"pint", s_pint},
 				{"pop", s_pop}, {"swap", s_swap}, {"add", s_add},
