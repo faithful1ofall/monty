@@ -1,6 +1,5 @@
 #include "monty.h"
 
-fvar_t fuse = {NULL, NULL, NULL, 0};
 /**
 * main - monty code interpreter
 * @ac: number of arguments
@@ -14,8 +13,9 @@ int main(int ac, char *av[])
 	size_t size = 0;
 	ssize_t read_line = 1;
 	stack_t *stack = NULL;
-
 	unsigned int counter = 0;
+	fvar_t fuse = {NULL, NULL, NULL, 0};
+
 	if (ac != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
