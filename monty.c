@@ -15,6 +15,7 @@ int main(int ac, char *av[])
 	stack_t *stack = NULL;
 	unsigned int counter = 0;
 	fvar_t fuse = {NULL, NULL, NULL, 0};
+	(void)fuse;
 
 	if (ac != 2)
 	{
