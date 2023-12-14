@@ -51,13 +51,13 @@ typedef struct fvar_s
 {
 	char *ag;
 	FILE *file;
-	char *con;
+	char *fcontent;
 	int fque;
 }  fvar_t;
 
 extern fvar_t fuse;
 
-int fexe(char *, stack_t, size_t, FILE *);
+int fexe(char *, stack_t **, unsigned int, FILE *);
 void free_fstack(stack_t *);
 
 /* basic operations */
@@ -86,5 +86,8 @@ void faddnode(stack_t **, int);
 void s_stack(stack_t **, unsigned int);
 void s_queue(stack_t **, unsigned int);
 void faddqueue(stack_t **, int);
+char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
+ssize_t getstdin(char **lineptr, int file);
+char  *clean_line(char *content);
 
 #endif /* MONTY_H */
