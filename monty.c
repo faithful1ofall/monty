@@ -30,7 +30,7 @@ int main(int ac, char *av[])
 	while (read_line > 0)
 	{
 		fcontent = NULL;
-		read_line = getline(&fcontent, &size, file);
+		read_line = _getline(&fcontent, &size, file);
 		fuse.fcontent = fcontent;
 		counter++;
 		if (read_line > 0)
