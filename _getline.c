@@ -39,3 +39,4 @@ if (*lineptr == NULL || *n == 0)
 	(*lineptr)[pos] = '\0';
 	return (pos);
 }
+}
