@@ -1,5 +1,6 @@
 #include "monty.h"
 
+fvar_t fuse = {NULL, NULL, NULL, 0};
 /**
 * _getline - custom getline function
 * @lineptr: content and lines
@@ -7,7 +8,6 @@
 * @stream: the file stream
 * Return: 0 on success
 */
-
 ssize_t _getline(char **lineptr, size_t *n, FILE *stream)
 {
 	size_t pos = 0;
@@ -40,8 +40,6 @@ if (*lineptr == NULL || *n == 0)
 	(*lineptr)[pos] = '\0';
 	return (pos);
 }
-
-fvar_t fuse = {NULL, NULL, NULL, 0};
 
 /**
 * main - monty code interpreter
