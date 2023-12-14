@@ -8,10 +8,10 @@ fvar_t fuse = {NULL, NULL, NULL, 0};
 */
 int main(int ac, char *av[])
 {
-	char *content;
+	char *fcontent;
 	FILE *file;
 	size_t size = 0;
-	ssize_t read_line = 1;
+	ssize_t read_fline = 1;
 	stack_t *stack = NULL;
 	unsigned int counter = 0;
 
@@ -27,17 +27,17 @@ int main(int ac, char *av[])
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	while (read_line > 0)
+	while (read_fline > 0)
 	{
-		content = NULL;
-		read_line = getline(&content, &size, file);
-		fuse.content = content;
+		fcontent = NULL;
+		read_fline = getline(&fcontent, &size, file);
+		fuse.fcontent = fcontent;
 		counter++;
-		if (read_line > 0)
+		if (read_fline > 0)
 		{
-			fexe(content, &stack, counter, file);
+			fexe(fcontent, &stack, counter, file);
 		}
-		free(content);
+		free(fcontent);
 	}
 	free_fstack(stack);
 	fclose(file);

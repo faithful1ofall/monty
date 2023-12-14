@@ -5,6 +5,9 @@
 #include <fcntl.h>
 #include <stdio.h>
 #include <string.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <ctype.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -37,10 +40,10 @@ typedef struct instruction_s
 } instruction_t;
 
 /**
- * struct fvar_s - variables -args, file, line content
+ * struct fvar_s - variables -args, file, line fcontent
  * @ag: value
  * @file: pointer to monty file
- * @con: line content
+ * @con: line fcontent
  * @fque: flag change stack <-> queue
  * Description: carries values through the program
  */
@@ -51,11 +54,37 @@ typedef struct fvar_s
 	char *con;
 	int fque;
 }  fvar_t;
+
 extern fvar_t fuse;
 
 int fexe(char *, stack_t, size_t, FILE *);
-void free_fstack(stack_t *head);
-void s_push(stack_t, unsigned int);
-void s_pall(stack_t, unsigned int);
+void free_fstack(stack_t *);
+
+/* basic operations */
+void s_push(stack_t **, unsigned int);
+void s_pall(stack_t **, unsigned int);
+void s_pint(stack_t **, unsigned int);
+void s_pop(stack_t **, unsigned int);
+void s_swap(stack_t **, unsigned int);
+
+/* maths operations */
+void s_add(stack_t **, unsigned int);
+void s_sub(stack_t **, unsigned int);
+void s_div(stack_t **, unsigned int);
+void s_mul(stack_t **, unsigned int);
+void s_mod(stack_t **, unsigned int);
+
+/* for other operations*/
+void s_nop(stack_t **, unsigned int);
+void s_pchar(stack_t **, unsigned int);
+void s_pstr(stack_t **, unsigned int);
+void s_rotl(stack_t **, unsigned int);
+void s_rotr(stack_t **, __attribute__((unused)) unsigned int);
+
+/* for nodes*/
+void faddnode(stack_t **, int);
+void s_stack(stack_t **, unsigned int);
+void s_queue(stack_t **, unsigned int);
+void faddqueue(stack_t **, int);
 
 #endif /* MONTY_H */
