@@ -1,4 +1,5 @@
 #include "monty.h"
+
 /**
  * s_push - add node to the stack
  * @fhead: stack fhead
@@ -17,7 +18,7 @@ void s_push(stack_t **fhead, unsigned int counter)
 			if (fuse.ag[j] > 57 || fuse.ag[j] < 48)
 				flag = 1;
 		if (flag == 1)
-		{ 
+		{
 			fprintf(stderr, "L%d: usage: push integer\n", counter);
 			fclose(fuse.file);
 			free(fuse.fcontent);
