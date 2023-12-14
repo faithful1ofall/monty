@@ -1,5 +1,53 @@
 #include "monty.h"
 
+
+ssize_t _getline(char **lineptr, size_t *n, FILE *stream) {
+	size_t pos;
+	int ch;
+	char *new_ptr;
+
+    if (lineptr == NULL || n == NULL || stream == NULL) {
+        return -1;
+    }
+
+    if (*lineptr == NULL || *n == 0) {
+        *n = INITIAL_BUFFER_SIZE;
+        *lineptr = (char *)malloc(*n);
+
+        if (*lineptr == NULL) {
+            return -1;
+        }
+    }
+
+    pos = 0;
+
+    while ((ch = fgetc(stream)) != EOF) {
+        if (pos >= *n - 1) {
+            *n *= 2;
+            new_ptr = (char *)realloc(*lineptr, *n);
+
+            if (new_ptr == NULL) {
+                return -1;
+            }
+
+            *lineptr = new_ptr;
+        }
+
+        (*lineptr)[pos++] = ch;
+
+        if (ch == '\n') {
+            break;
+        }
+    }
+
+    if (pos == 0) {
+        return -1;
+    }
+
+    (*lineptr)[pos] = '\0';
+    return pos;
+}
+
 fvar_t fuse = {NULL, NULL, NULL, 0};
 /**
 * main - monty code interpreter
@@ -31,7 +79,7 @@ int main(int ac, char *av[])
 	while (read_line > 0)
 	{
 		fcontent = NULL;
-		read_line = getline(&fcontent, &size, file);
+		read_line = _getline(&fcontent, &size, file);
 		fuse.fcontent = fcontent;
 		counter++;
 		if (read_line > 0)
