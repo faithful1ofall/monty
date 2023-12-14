@@ -5,9 +5,10 @@
 #include <stdlib.h>
 #include <fcntl.h>
 #include <string.h>
+#include <ctype.h>
 #include <sys/types.h>
 #include <unistd.h>
-#include <ctype.h>
+
 
 #define INITIAL_BUFFER_SIZE 1024
 
