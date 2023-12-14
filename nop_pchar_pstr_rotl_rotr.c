@@ -21,7 +21,6 @@ void s_nop(stack_t **fhead, unsigned int counter)
 */
 void s_pchar(stack_t **fhead, unsigned int counter)
 {
-	fvar_t fuse = {NULL, NULL, NULL, 0};
 	stack_t *h;
 
 	h = *fhead;
